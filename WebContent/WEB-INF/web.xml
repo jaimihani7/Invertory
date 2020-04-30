@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>InvertorySystem</display-name>
+  <welcome-file-list>
+    <welcome-file>Login.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+     <servlet-name>Login</servlet-name>
+     <servlet-class>com.kireetisoft.General.Login</servlet-class>
+  </servlet>
+  <servlet-mapping>
+     <servlet-name>Login</servlet-name>
+     <url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+  <servlet>
+     <servlet-name>SendOtpToMobile</servlet-name>
+     <servlet-class>com.kireetisoft.General.SendOtpToMobile</servlet-class>
+  </servlet>
+  <servlet-mapping>
+     <servlet-name>SendOtpToMobile</servlet-name>
+     <url-pattern>/SendOtpToMobile</url-pattern>
+  </servlet-mapping>
+</web-app>

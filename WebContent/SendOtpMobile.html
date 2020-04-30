@@ -1,0 +1,132 @@
+<html>
+<head>
+<script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="CSS/font-awesome.min.css" type="text/css" />
+<link rel = "stylesheet" type = "text/css"  href = "dist/css/snackbar.css" />
+<style type="text/css">
+  *, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 30px;
+  overflow: hidden;
+}
+body{
+background-color: #ffffff;
+}
+.container{
+  /*min-height: 100vh;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Oswald;
+}
+
+.vm-search {
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.vm-search-input, .vm-search-btn {
+  border: 0;
+  outline: none;
+  background-color: #0f0f0e30;
+  font-size: 30px;
+  padding: 10px 15px;
+  font-family: inherit;
+}
+
+.vm-search-input {
+  transition: box-shadow .35s ease-out;
+  vertical-align: middle;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: 600px;
+  border-radius: 2px;
+  color: #323643;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.vm-search-input::placeholder {
+  color: #bbb;
+}
+
+.vm-search-btn {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: inline-block;
+  transition: color .4s ease-in-out;
+}
+
+@keyframes shake {
+  0%{}
+  25%{right: 5px}
+  50%{right: 2px}
+  75%{right: 0}
+  100%{}
+}
+
+.vm-search-btn:hover {
+  color: #033fff;
+  animation: shake 1s linear infinite;
+}
+
+.vm-search-input:focus .vm-search {
+  box-shadow: 5px 31px 85px 23px rgba(0,0,0,.07);
+}
+h2{
+margin-left: 454px;
+}
+</style>
+  
+</style>
+</head>
+<div id="snackbar" class="alert-success"></div>
+     <body>
+	  <p align='left'><img src="./images/KRTCRMLogo.jpg"></p><br><br><br>
+          <h2 class="text-center">Enter Mobile Number for sending OTP</h2><br>
+          	  <div class="container">
+             <div class="vm-search">
+             <form  action="SendOtpToMobile" method="post">
+               <input id="Mobile" name="mobile" type="text" class="vm-search-input" placeholder="Mobile Number..." autocomplete="off">
+                  <input id="submit" type="submit" class="vm-search-btn">
+                 <i class="icon ion-md-arrow-round-forward"></i>
+                  </>
+                </form>
+            </div>
+  
+         </div>
+		 
+     </body>
+</head>
+<script src="JS/snackbar.js"></script>
+<script type="text/javascript">
+$("#submit").click(function(){
+	var mobile=$("#Mobile").val();
+	if(!mobile.match("^[6789][0-9]{9}$")){
+		var msg="Please Enter Valid Mobile Number";
+		 $('#snackbar').html("<b>"+msg+"</b>");
+			snackbar();
+	return false;
+	}
+	})
+</script>
+<script>
+$(document).ready(function() {
+    window.history.pushState(null, "", window.location.href);        
+    window.onpopstate = function() {
+        window.history.pushState(null, "", window.location.href);
+    };
+});
+</script>
+</html>
